@@ -78,7 +78,7 @@ def get_args():
 
 def make_folder(args):
     """
-    ダウンロードフォルダがない場合に作成します
+    フォルダがない場合に作成します
     :param args:
     :return:
     """
