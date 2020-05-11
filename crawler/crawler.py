@@ -91,9 +91,9 @@ def make_folder(args):
     if not p_keyword.exists():
         os.makedirs(str(p_keyword))
 
-    p_dir_google = Path(p.parent) / Path(f'{args.dict}') / Path(f'{args.keyword}') / Path('google')
-    if not p_dir_google.exists():
-        os.makedirs(str(p_dir_google))
+    # p_dir_google = Path(p.parent) / Path(f'{args.dict}') / Path(f'{args.keyword}') / Path('google')
+    # if not p_dir_google.exists():
+    #     os.makedirs(str(p_dir_google))
 
     p_dir_bing = Path(p.parent) / Path(f'{args.dict}') / Path(f'{args.keyword}') / Path('bing')
     if not p_dir_bing.exists():
@@ -105,15 +105,15 @@ def make_folder(args):
 
 
 def exe_crawl(arg):
-    google_crawler = GoogleImageCrawler(
-        downloader_cls=PrefixNameGoogleDownloader,
-        feeder_threads=1,
-        parser_threads=1,
-        downloader_threads=4,
-        storage={'root_dir': f'{arg.dict}/{arg.keyword}/google'})
+    # google_crawler = GoogleImageCrawler(
+    #     downloader_cls=PrefixNameGoogleDownloader,
+    #     feeder_threads=1,
+    #     parser_threads=1,
+    #     downloader_threads=4,
+    #     storage={'root_dir': f'{arg.dict}/{arg.keyword}/google'})
     filters = dict(
         license=f'{arg.license}')
-    google_crawler.crawl(keyword=f'{arg.keyword}', filters=filters, offset=0, max_num=arg.max, file_idx_offset=0)
+    # google_crawler.crawl(keyword=f'{arg.keyword}', filters=filters, offset=0, max_num=arg.max, file_idx_offset=0)
 
     bing_crawler = BingImageCrawler(
         downloader_cls=PrefixNameBingDownloader,
